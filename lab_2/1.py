@@ -19,15 +19,11 @@ all_letters = list(letter_frequencies.keys())
 total_word_count = 0
 
 # Рекурсивная функция для перебора всех возможных способов выбрать 6 букв
-# i — текущий индекс в списке all_letters
-# letters_used_so_far — сколько букв уже выбрано
-# current_selection — список, показывающий, сколько раз взята каждая буква до текущего момента
 def explore_all_combinations(i, letters_used_so_far, current_selection):
     global total_word_count
 
     if i == len(all_letters):
         if letters_used_so_far == 6:
-            # Формула: 6! / (k1! * k2! * ... * km!), где ki — количество повторов i-й буквы
             denominator = 1
             for count in current_selection:
                 factorial_of_count = math.factorial(count)
